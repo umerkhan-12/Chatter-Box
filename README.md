@@ -1,124 +1,55 @@
-📢 ChatterBox
+# 📢 ChatterBox
 
-ChatterBox is a full-stack chat forum web application designed to facilitate topic-based discussions. It integrates Clerk for authentication and Stream for real-time chat functionalities. Users can join specific forums, engage in conversations, and continue discussions seamlessly.
+**ChatterBox** is a full-stack, topic-based chat forum application. Users can join discussion forums via dynamic URLs and chat in real-time — thanks to seamless integration with **Clerk** for secure authentication and **Stream Chat** for instant messaging.
 
-🚀 Features
+---
 
-👥 Authentication
+## 🚀 Features
 
-Clerk Integration: Users log in with secure and scalable authentication.
+### 🔐 Authentication
+- **Clerk Integration**: Scalable, secure login.
+- Supports **credential-based login**.
 
-Credential-based login support.
+### 💬 Real-Time Chat
+- **Stream Chat SDK** for fast messaging.
+- Channels based on dynamic forum topics (e.g., `/forums/react`, `/forums/ai`).
+- Messages persist even after refreshing or navigating.
 
-💬 Real-Time Chat
+### 🧵 Forum System
+- Dynamic forum creation from slug-based routes.
+- Custom forum metadata (title + description).
+- Auto-joins new users to selected channels.
 
-Stream Chat SDK: Real-time messaging with channels based on forum topics.
+### 🧠 Smart UX
+- Remembers last visited forum using `localStorage`.
+- Auto-redirects to last active forum.
+- Auto-scrolls to the latest message on load.
 
-Join forums using URL slugs like /forums/react, /forums/ai, etc.
+### 🎨 UI & Styling
+- Built with **Next.js 14 App Router**.
+- Styled using **Tailwind CSS**.
+- Clean, minimal components for buttons, links, and layouts.
 
-Persistent channels even after refreshing or navigating.
+---
 
-📌 Forums System
+## 🛠️ Tech Stack
 
-Dynamic forum creation based on slug routes.
+| Layer         | Tech                  |
+| ------------- | --------------------- |
+| **Frontend**  | Next.js 14 (React)    |
+| **Backend**   | Stream Chat SDK       |
+| **Auth**      | Clerk.dev             |
+| **Styling**   | Tailwind CSS          |
+| **Hosting**   | Vercel                |
 
-Custom metadata for each forum (title & description).
+---
 
-Automatically adds the user to the forum channel if not already a member.
+## 🔐 Environment Variables
 
-🧠 Smart UX
+Create a `.env.local` file and add:
 
-Saves and loads the latest forum from LocalStorage.
-
-Redirects users to their previously joined forum.
-
-Channel view auto-scrolls to the latest message.
-
-🎨 UI & Styling
-
-Built with Next.js 14 App Router.
-
-Styled using Tailwind CSS.
-
-Custom button and link handling.
-
-🛠️ Tech Stack
-
-Layer
-
-Tool/Library
-
-Frontend
-
-React, Next.js 14
-
-Backend
-
-Stream Chat SDK
-
-Authentication
-
-Clerk
-
-Styling
-
-Tailwind CSS
-
-Hosting
-
-Vercel
-
-
-
-🔐 Environment Variables
-
+```env
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_key
 CLERK_SECRET_KEY=your_clerk_secret
-STREAM_API_KEY=your_stream_key
-
-🧪 How to Use
-
-Install dependencies:
-
-npm install
-
-Run locally:
-
-npm run dev
-
-Visit the homepage at http://localhost:3000
-
-Login using Clerk.
-
-Navigate to forums:
-
-Example: http://localhost:3000/forums/react
-
-You can create your own forums by typing the desired slug.
-
-🔧 Customization
-
-You can customize available forum links via a menu component or homepage.
-
-Modify Chatforum metadata logic to reflect your branding.
-
-🧼 TODOs & Improvements
-
-
-
-📸 Screenshots (Optional)
-
-Add relevant screenshots or demo links here
-
-🧑‍💻 Author
-
-Umer Khan
-
-Final year project / learning exercise in full-stack chat systems.
-
-📃 License
-
-MIT
-
-Happy chatting with ChatterBox! 🎉
-
+STREAM_API_KEY=your_stream_api_key
+STREAM_SECRET=your_stream_secret
