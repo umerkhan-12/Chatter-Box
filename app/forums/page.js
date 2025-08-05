@@ -104,7 +104,7 @@ export default function ForumsSection() {
                 className="mt-4 inline-block px-4 py-2 text-sm font-semibold rounded-xl bg-teal-500 hover:bg-teal-400 text-white transition"
                 onClick={() => handleClick(item.slug)}
                 >
-                console.log(`Navigating to forum: ${item.slug}`)
+                
                 Explore Forum
               </Button>
             </div>
